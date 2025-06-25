@@ -3,9 +3,8 @@ import logging
 import streamlit as st
 
 from src.settings import get_settings
-from src.pages import LoginPage
+from src.pages import HelloWorldPage
 from src.clients import BackendAPIClient
-from src.api_tokens import AzureAPIToken
 
 logger = logging.getLogger(__name__)
 
@@ -17,19 +16,13 @@ def init_app() -> None:
             settings = get_settings()
 
             # Instantiate objects
-            api_client = BackendAPIClient(
-                settings=settings,
-                api_token_cls=AzureAPIToken,
-            )
-            login_page = LoginPage(
-                settings=settings,
-                api_client=api_client,
-            )
+            backend_api_client = BackendAPIClient(settings)
+            hello_world_page = HelloWorldPage(settings, backend_api_client)
 
             # Update the session state
             st.session_state.update({
                 "settings": settings,
-                "login_page": login_page,
+                "hello_world_page": hello_world_page,
             })
             st.session_state.initialized_app = True
             logger.debug("App has been initialized")
