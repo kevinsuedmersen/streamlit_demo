@@ -10,12 +10,12 @@ logger = logging.getLogger(__name__)
 
 
 def handle_invalid_request(request_func: Callable) -> Callable:
-    """Decorator handling potentially invalid requests to the clerky api.
+    """Decorator handling potentially invalid requests to the backend api.
 
     Parameters
     ----------
     request_func: Callable
-        Function executing the raw request to the clerky backend.
+        Function executing the raw request to the backend backend.
 
     Returns
     -------
