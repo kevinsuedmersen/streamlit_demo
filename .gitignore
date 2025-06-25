@@ -1,0 +1,14 @@
+# Temporary
+backend
+
+# Project specific
+frontend/.env*
+backend/.env*
+
+# Standard stuff
+**__pycache__**
+*.pyc
+venv
+.vscode
+.idea
+.DS_STORE
