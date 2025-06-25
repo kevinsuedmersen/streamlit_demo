@@ -23,6 +23,7 @@ def init_app() -> None:
             st.session_state.update({
                 "settings": settings,
                 "hello_world_page": hello_world_page,
+                "is_successful_connection": None
             })
             st.session_state.initialized_app = True
             logger.debug("App has been initialized")

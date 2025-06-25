@@ -13,8 +13,14 @@ class HelloWorldPage(BasePage):
 
     @handle_any_exception
     def display(self) -> None:
-        successful_connection = self._backend_api_client.test_connection()
-        if successful_connection:
-            st.write(f"Connecting to the backend api worked!")
-        else:
-            st.error("Connecting to the backend api failed.")
+        if st.session_state.is_successful_connection is None:
+            st.write("Connection to the backend hasn't been tested yet.")
+
+            if st.button("Test Connection"):
+                # Test connection and cache the result
+                st.session_state.is_successful_connection = self._backend_api_client.test_connection()
+
+                if st.session_state.is_successful_connection:
+                    st.write(f"Connecting to the backend api worked!")
+                else:
+                    st.error("Connecting to the backend api failed.")

@@ -9,5 +9,5 @@ pip install -r requirements.txt
 ## Usage
 ```bash
 export PYTHONPATH="${PYTHONPATH}:${PWD}"
-streamlit run 1_LOGIN.PY
+streamlit run 1_HELLO_WORLD.py
 ```
