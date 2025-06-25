@@ -1,6 +1,6 @@
 import streamlit as st
 
-from src.pages._base_page import BasePage
+from src.page_logic._base_page import BasePage
 from src.settings import Settings
 from src.clients import BackendAPIClient
 
