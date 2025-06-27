@@ -12,7 +12,7 @@ logger = logging.getLogger(__name__)
 def init_app() -> None:
     if ("initialized_app" not in st.session_state) or (not st.session_state.initialized_app):
         with st.spinner("Initializing app..."):
-            logger.debug("Initializing app")
+            logger.info("Initializing app")
             settings = get_settings()
 
             # Instantiate objects
@@ -28,4 +28,4 @@ def init_app() -> None:
                 "is_successful_connection": None
             })
             st.session_state.initialized_app = True
-            logger.debug("App has been initialized")
+            logger.info("App has been initialized")
