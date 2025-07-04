@@ -13,6 +13,3 @@ pip install -r requirements.txt
 export PYTHONPATH="${PYTHONPATH}:${PWD}"
 streamlit run 1_HELLO_WORLD.py
 ```
-bla 1
-bla 2
-bla 3
